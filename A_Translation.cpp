@@ -7,6 +7,7 @@ int main(int argc, char const *argv[])
     cin >> a >> b;
     if (a.length() != b.length()) {
         cout << "NO";
+        return 0;
     }
     int s = 0;
     int e = a.size() - 1;

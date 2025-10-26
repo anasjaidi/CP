@@ -7,7 +7,7 @@ bool isLuck(short i) {
 
 int main(int argc, char const *argv[])
 {
-    long n;
+    long long n;
     int l = 0;
     cin >> n;
 

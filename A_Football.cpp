@@ -1,27 +1,29 @@
 #include <iostream>
+#include <unordered_map>
 
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    string s;
-    char c = '\0';
-    int r = 1;
-
+   int n;
+   std::unordered_map<std::string, int> matches;  
+   cin >> n;
+   string max;
+   int mx  = 0;
+   while (n--)
+   {
+    string s;  
     cin >> s;
-
-    for (char x : s) {
-        if (r >= 7) {
-            break;
-        }
-        if (x == c) {
-            r++;
-        } else {
-            c = x;
-            r = 1;
-        }
+    if (matches.count(s)) {
+        matches[s] += 1;
+    } else {
+        matches[s] = 1;
     }
-
-    cout << ((r == 7) ? "YES" : "NO");
-    return 0;
+    if (matches[s] > mx) {
+        mx = matches[s];
+        max = s;
+    }
+   }
+    cout << max;
+return 0;
 }
